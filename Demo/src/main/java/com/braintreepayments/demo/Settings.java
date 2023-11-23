@@ -139,6 +139,10 @@ public class Settings {
         return getPreferences(context).getBoolean("google_pay_require_billing_address", false);
     }
 
+    public static boolean isAssuranceDetailsRequired(Context context){
+        return getPreferences(context).getBoolean("google_pay_require_assurance_details", false);
+    }
+
     public static boolean isGooglePayPhoneNumberRequired(Context context) {
         return getPreferences(context).getBoolean("google_pay_require_phone_number", false);
     }

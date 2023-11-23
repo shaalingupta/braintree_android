@@ -317,6 +317,7 @@ public class GooglePayClientUnitTest {
         googlePayRequest.setBillingAddressFormat(1);
         googlePayRequest.setBillingAddressRequired(true);
         googlePayRequest.setEmailRequired(true);
+        googlePayRequest.setAssuranceDetailsRequired(true);
         googlePayRequest.setPhoneNumberRequired(true);
         googlePayRequest.setShippingAddressRequired(true);
         googlePayRequest.setShippingAddressRequirements(ShippingAddressRequirements.newBuilder().addAllowedCountryCode("USA").build());
@@ -431,6 +432,7 @@ public class GooglePayClientUnitTest {
         googlePayRequest.setBillingAddressFormat(1);
         googlePayRequest.setBillingAddressRequired(true);
         googlePayRequest.setEmailRequired(true);
+        googlePayRequest.setAssuranceDetailsRequired(true);
         googlePayRequest.setPhoneNumberRequired(true);
         googlePayRequest.setShippingAddressRequired(true);
         googlePayRequest.setShippingAddressRequirements(ShippingAddressRequirements.newBuilder().addAllowedCountryCode("USA").build());

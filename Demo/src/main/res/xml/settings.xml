@@ -63,6 +63,12 @@
             android:defaultValue="false" />
 
         <CheckBoxPreference
+            android:key="google_pay_require_assurance_details"
+            android:title="@string/google_pay_require_assurance_details"
+            android:summary="@string/google_pay_require_assurance_details_summary"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
             android:key="google_pay_require_phone_number"
             android:title="@string/google_pay_require_phone_number"
             android:summary="@string/google_pay_require_phone_number_summary"

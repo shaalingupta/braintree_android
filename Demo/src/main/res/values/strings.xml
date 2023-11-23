@@ -58,6 +58,8 @@
     <string name="us">US</string>
     <string name="google_pay_require_shipping_address">Require Shipping Address</string>
     <string name="google_pay_require_shipping_address_summary">Require shipping address from the user</string>
+    <string name="google_pay_require_assurance_details">Require Assurance Details</string>
+    <string name="google_pay_require_assurance_details_summary">Required Assurance Details from the user</string>
     <string name="google_pay_require_phone_number">Require Phone Number</string>
     <string name="google_pay_require_phone_number_summary">Require phone number from the user</string>
     <string name="google_pay_currency_title">Currency</string>

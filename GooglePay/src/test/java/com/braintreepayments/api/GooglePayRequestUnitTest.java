@@ -38,6 +38,7 @@ public class GooglePayRequestUnitTest {
         request.setBillingAddressFormat(WalletConstants.BILLING_ADDRESS_FORMAT_FULL);
         request.setBillingAddressRequired(true);
         request.setEmailRequired(true);
+        request.setAssuranceDetailsRequired(true);
         request.setPhoneNumberRequired(true);
         request.setShippingAddressRequired(true);
         request.setShippingAddressRequirements(shippingAddressRequirements);
@@ -50,6 +51,7 @@ public class GooglePayRequestUnitTest {
         assertEquals(WalletConstants.BILLING_ADDRESS_FORMAT_FULL, request.getBillingAddressFormat());
         assertTrue(request.isBillingAddressRequired());
         assertTrue(request.isEmailRequired());
+        assertTrue(request.isAssuranceDetailsRequired());
         assertTrue(request.isPhoneNumberRequired());
         assertTrue(request.isShippingAddressRequired());
         assertEquals(shippingAddressRequirements, request.getShippingAddressRequirements());
@@ -67,6 +69,7 @@ public class GooglePayRequestUnitTest {
         assertEquals(WalletConstants.BILLING_ADDRESS_FORMAT_MIN, request.getBillingAddressFormat());
         assertFalse(request.isBillingAddressRequired());
         assertFalse(request.isEmailRequired());
+        assertFalse(request.isAssuranceDetailsRequired());
         assertFalse(request.isPhoneNumberRequired());
         assertFalse(request.isShippingAddressRequired());
         assertTrue(request.isCreditCardsAllowed());
@@ -90,6 +93,7 @@ public class GooglePayRequestUnitTest {
 
         request.setTransactionInfo(info);
         request.setEmailRequired(true);
+        request.setAssuranceDetailsRequired(true);
         request.setPhoneNumberRequired(true);
         request.setShippingAddressRequired(true);
         request.setBillingAddressRequired(true);
@@ -113,6 +117,7 @@ public class GooglePayRequestUnitTest {
         assertEquals("10", parceled.getTransactionInfo().getTotalPrice());
         assertEquals(WalletConstants.TOTAL_PRICE_STATUS_FINAL, parceled.getTransactionInfo().getTotalPriceStatus());
         assertTrue(parceled.isEmailRequired());
+        assertTrue(parceled.isAssuranceDetailsRequired());
         assertTrue(parceled.isPhoneNumberRequired());
         assertTrue(parceled.isShippingAddressRequired());
         assertTrue(parceled.isBillingAddressRequired());
@@ -151,6 +156,7 @@ public class GooglePayRequestUnitTest {
         assertEquals("10", parceled.getTransactionInfo().getTotalPrice());
         assertEquals(WalletConstants.TOTAL_PRICE_STATUS_FINAL, parceled.getTransactionInfo().getTotalPriceStatus());
         assertFalse(parceled.isEmailRequired());
+        assertFalse(parceled.isAssuranceDetailsRequired());
         assertFalse(parceled.isPhoneNumberRequired());
         assertFalse(parceled.isShippingAddressRequired());
         assertFalse(parceled.isBillingAddressRequired());
@@ -211,6 +217,7 @@ public class GooglePayRequestUnitTest {
         request.setCountryCode("US");
         request.setPhoneNumberRequired(true);
         request.setEmailRequired(true);
+        request.setAssuranceDetailsRequired(true);
         request.setShippingAddressRequired(true);
         request.setShippingAddressRequirements(shippingAddressRequirements);
         request.setBillingAddressRequired(true);

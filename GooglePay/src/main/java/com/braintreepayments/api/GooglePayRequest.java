@@ -26,6 +26,7 @@ import java.util.Map;
 public class GooglePayRequest implements Parcelable {
 
     private TransactionInfo transactionInfo;
+    private boolean assuranceDetailsRequired;
     private boolean emailRequired;
     private boolean phoneNumberRequired;
     private boolean billingAddressRequired;
@@ -57,6 +58,15 @@ public class GooglePayRequest implements Parcelable {
      */
     public void setTransactionInfo(@Nullable TransactionInfo transactionInfo) {
         this.transactionInfo = transactionInfo;
+    }
+
+    /**
+     * Optional.
+     *
+     * @param assuranceDetailsRequired {@code true} if the buyer's assurance details it required to be returned, {@code false} otherwise.
+     */
+    public void setAssuranceDetailsRequired(boolean assuranceDetailsRequired) {
+        this.assuranceDetailsRequired = assuranceDetailsRequired;
     }
 
     /**
@@ -361,6 +371,13 @@ public class GooglePayRequest implements Parcelable {
     }
 
     /**
+     * @return If the buyer's assurance details is required to be returned.
+     */
+    public boolean isAssuranceDetailsRequired() {
+        return assuranceDetailsRequired;
+    }
+
+    /**
      * @return If the buyer's email address is required to be returned.
      */
     public boolean isEmailRequired() {
@@ -498,6 +515,7 @@ public class GooglePayRequest implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeParcelable(transactionInfo, flags);
+        dest.writeByte((byte) (assuranceDetailsRequired ? 1 : 0));
         dest.writeByte((byte) (emailRequired ? 1 : 0));
         dest.writeByte((byte) (phoneNumberRequired ? 1 : 0));
         dest.writeByte((byte) (billingAddressRequired ? 1 : 0));
@@ -515,6 +533,7 @@ public class GooglePayRequest implements Parcelable {
 
     GooglePayRequest(Parcel in) {
         transactionInfo = in.readParcelable(TransactionInfo.class.getClassLoader());
+        assuranceDetailsRequired = in.readByte() != 0;
         emailRequired = in.readByte() != 0;
         phoneNumberRequired = in.readByte() != 0;
         billingAddressRequired = in.readByte() != 0;

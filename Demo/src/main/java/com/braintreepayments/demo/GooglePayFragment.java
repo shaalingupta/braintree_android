@@ -91,15 +91,21 @@ public class GooglePayFragment extends BaseFragment implements GooglePayListener
                 .setTotalPrice("1.00")
                 .setTotalPriceStatus(WalletConstants.TOTAL_PRICE_STATUS_FINAL)
                 .build());
+        googlePayRequest.setGoogleMerchantId("google-merchant-id");
+        googlePayRequest.setGoogleMerchantName("google-merchant-name");
+        googlePayRequest.setCountryCode("BR");
+        googlePayRequest.setEnvironment("test");
         googlePayRequest.setAllowPrepaidCards(Settings.areGooglePayPrepaidCardsAllowed(activity));
         googlePayRequest.setBillingAddressFormat(WalletConstants.BILLING_ADDRESS_FORMAT_FULL);
         googlePayRequest.setBillingAddressRequired(Settings.isGooglePayBillingAddressRequired(activity));
         googlePayRequest.setEmailRequired(Settings.isGooglePayEmailRequired(activity));
+        googlePayRequest.setAssuranceDetailsRequired(Settings.isAssuranceDetailsRequired(activity));
         googlePayRequest.setPhoneNumberRequired(Settings.isGooglePayPhoneNumberRequired(activity));
         googlePayRequest.setShippingAddressRequired(Settings.isGooglePayShippingAddressRequired(activity));
         googlePayRequest.setShippingAddressRequirements(ShippingAddressRequirements.newBuilder()
                 .addAllowedCountryCodes(Settings.getGooglePayAllowedCountriesForShipping(activity))
                 .build());
+
 
         googlePayClient.requestPayment(getActivity(), googlePayRequest);
     }

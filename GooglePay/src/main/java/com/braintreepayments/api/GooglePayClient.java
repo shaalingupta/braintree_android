@@ -508,7 +508,8 @@ public class GooglePayClient {
                     .put("allowedAuthMethods",
                             request.getAllowedAuthMethodsForType(CARD_PAYMENT_TYPE))
                     .put("allowedCardNetworks",
-                            request.getAllowedCardNetworksForType(CARD_PAYMENT_TYPE));
+                            request.getAllowedCardNetworksForType(CARD_PAYMENT_TYPE))
+                    .put("assuranceDetailsRequired", request.isAssuranceDetailsRequired());
 
             if (request.isBillingAddressRequired()) {
                 defaultParameters
